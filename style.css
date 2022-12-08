@@ -2,10 +2,103 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 body{
-    margin: 1rem;
+    /* margin: 1rem; */
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#f8f9fa,#343a40);
+    /* border: 2px solid red; */
 }
 form{
     margin: 1rem;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+form input,select{
+    padding: 0.5rem;
+    width: 20rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+}
+.btn{
+    width: 5rem;
+    padding: 0.5rem 0.5rem;
+    border-radius: 10px;
+    font-weight: 750;
+}
+.submit_btn{
+background-color:#a8dadc;
+}
+.submit_btn:hover{
+    background-color: #457b9d;
+    cursor: pointer;
+    border: none;
+    box-shadow: 1rem 1rem 2rem lightgrey;
+}
+.title{
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    font-weight: 750;
+    left: 0;
+}
+span{
+    /* border: 2px solid black; */
+    padding: 0.6rem 5rem;
+    width: 16rem;
+    background-color: #6c757d;
+    border-radius: 5px;
+    color: whitesmoke;
+}
+.del-btn{
+    background-color: #e63946;
+}
+.edit-btn{
+    background-color: #2a9d8f;
+}
+.del-btn:hover{
+    background-color: #9d0208;
+    cursor: pointer;
+    box-shadow: 0.5rem 0.5rem 0.5rem lightgrey;
+}
+.edit-btn:hover{
+    background-color: #2d6a4f;
+    cursor: pointer;
+    box-shadow: 0.5rem 0.5rem 0.5rem lightgrey;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+table{
+    /* border: 2px solid black; */
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+table td, table th{
+    /* border: 2px solid black; */
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+table tr:nth-child(even){
+    background-color: lightgrey;
+}
+table th{
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    background-color: #6c757d;
+    border-radius: 5px;
 }

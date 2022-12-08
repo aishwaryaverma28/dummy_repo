@@ -9,21 +9,51 @@
     <title>mentoring session assign</title>
 </head>
 <body>
-    <input id="search" type="text" placeholder="Enter Pan Number" />
+  <form class="searchAndSort">
+    <div class="left">
+       Search by Pan Number:<input id="search" type="text" placeholder="Enter Pan Number" />
+    </div>
+    <div class="right">
+      Sort Data:
+      <select id="sort_array">
+        <option class="normal">normal</option>
+        <option value="A-Z" class="AtoZ">A to Z</option>
+        <option value="Z-A" class="ZtoA">Z to A</option>
+      </select>
+  </div>
+  </form>  
   <form class="candidate_data">
     Name:<input type="text" placeholder="your name" class="name">
     Pan No.:<input type="text" placeholder="Id Number" class="pan_no">
     Age:<input type="number" placeholder="age" class="age">
-    Highest Qualifaction:<input type="text" placeholder="qualification" class="high_quali">
-    <input type="submit" class="submit_btn">
+    Highest Qualification:<input type="text" placeholder="qualification" class="high_quali">
+    <input type="submit" class="submit_btn btn">
   </form>
-  <select id="sort_array">
-    <option class="normal">normal</option>
-    <option value="A-Z" class="AtoZ">A to Z</option>
-    <option value="Z-A" class="ZtoA">Z to A</option>
-  </select>
+  
   <div class="container">
-
+    <table>
+      <thead>
+          <tr>
+              <th>Name</th>
+              <th>PAN number</th>
+              <th>Age</th>
+              <th>Qualification</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody id="table_body">
+        <tr id="personDetails"><td>Aishwarya</td>
+          <td class="pan">DWXGH5678</td>
+          <td>29</td>
+          <td>M.tech</td>
+          <td>
+            <button class="del-btn btn">Delete</button>
+            <button class="edit-btn btn">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+  
   </div>
 <script src="app.js"></script>  
 </body>
