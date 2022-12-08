@@ -1,5 +1,6 @@
 let arr = [];// array to store candidates info in form of object
 let count = 0;// to assign new id to each object
+let name,pan,canAge,education;
 //============================================================query selector===========================================================================
 const sorting = document.querySelector('#sort_array');
 const search = document.querySelector('.search');
@@ -68,17 +69,55 @@ function createHtml(event){
 }
 function deleteRow(event)
 {
- console.log(event);
+ console.log(arr);
   event.path[2].remove();
   arr.forEach((ele,index)=>{
     if(parseInt(event.path[2].id) == ele.id){
        arr.splice(index,1);
     }
   })
- localStorage.setItem("details",JSON.stringify(arr));
+ localStorage.setItem("arr",JSON.stringify(arr));
 }
 
 
+//========================================================================edit row==================================================================
+function editRow(event){
+  console.log(event);
+  name = event.path[2].childNodes[1];
+  pan = event.path[2].childNodes[3];
+  canAge = event.path[2].childNodes[5];
+  education = event.path[2].childNodes[7];
+  inpName.value = name.textContent;
+  panNo.value = pan.textContent;
+  age.vale = canAge.textContent;
+  highestQualification.value = education.textContent;
+  submitBtn.value = "Save";
+}
+
+//=========================================================================save and update value==========================================================
+function  saveUpdate(event,nameTxt, panTxt, ageTxt, eduTxt)
+{
+  //console.log(name);
+  name.textContent = nameTxt;
+  pan.textContent = panTxt;
+  canAge.textContent = ageTxt;
+  education.textContent = eduTxt;
+  submitBtn.value = "Add";
+
+// update the array
+arr.forEach((ele,index)=>{
+  if(event.path[2].id==ele.id){
+     ele.name = nameTxt;
+     ele.pan = panTxt;
+     ele.age = ageTxt;
+     ele.edu = eduTxt;
+  }
+})
+localStorage.setItem("arr",JSON.stringify(arr));
+// console.log(inputDetailArr)
+
+inputForm.reset();
+}
 //========================================================================event listeners=================================================================
 //form submit event listner
 submitBtn.addEventListener("click", createHtml);
@@ -95,3 +134,10 @@ tableBody.addEventListener("click",(event)=>{
     }
 
 })
+
+
+
+
+//for sorting data according to user choice
+
+  
