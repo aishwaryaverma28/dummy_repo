@@ -25,6 +25,7 @@ function addHtmlElement(inputObj)
 {
   const tableRow = document.createElement("tr");
   tableRow.setAttribute("class","personDetails");
+  tableRow.setAttribute("id",inputObj.id);
   tableRow.innerHTML = `
     <td>${inputObj.name}</td>
     <td class="pan">${inputObj.pan}</td>
@@ -70,7 +71,7 @@ function deleteRow(event)
  console.log(event);
   event.path[2].remove();
   arr.forEach((ele,index)=>{
-    if(parseInt(event.path[2].id)==ele.id){
+    if(parseInt(event.path[2].id) == ele.id){
        arr.splice(index,1);
     }
   })
