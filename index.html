@@ -9,9 +9,9 @@
     <title>mentoring session assign</title>
 </head>
 <body>
-  <form class="searchAndSort">
+  <form class="search_and_sort">
     <div class="left">
-       Search by Pan Number:<input id="search" type="text" placeholder="Enter Pan Number" />
+       Search by Pan Number:<input class="search" type="text" placeholder="Enter Pan Number" />
     </div>
     <div class="right">
       Sort Data:
@@ -29,32 +29,32 @@
     Highest Qualification:<input type="text" placeholder="qualification" class="high_quali">
     <input type="submit" class="submit_btn btn">
   </form>
-  
-  <div class="container">
-    <table>
-      <thead>
-          <tr>
-              <th>Name</th>
-              <th>PAN number</th>
-              <th>Age</th>
-              <th>Qualification</th>
-              <th>Action</th>
-          </tr>
-      </thead>
-      <tbody id="table_body">
-        <tr id="personDetails"><td>Aishwarya</td>
-          <td class="pan">DWXGH5678</td>
-          <td>29</td>
-          <td>M.tech</td>
-          <td>
-            <button class="del-btn btn">Delete</button>
-            <button class="edit-btn btn">Edit</button>
-          </td>
-        </tr>
-      </tbody>
+  <div class="error_input error"></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>PAN number</th>
+        <th>Age</th>
+        <th>Qualification</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="table_body">
+      <tr class="personDetails">
+        <td>Aishwarya</td>
+        <td class="pan">DWXGH5678</td>
+        <td>29</td>
+        <td>M.tech</td>
+        <td>
+          <button class="del-btn btn">Delete</button>
+          <button class="edit-btn btn">Edit</button>
+        </td>
+      </tr>
+    </tbody>
   </table>
   
-  </div>
+
 <script src="app.js"></script>  
 </body>
 </html>

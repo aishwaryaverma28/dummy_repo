@@ -43,6 +43,12 @@ background-color:#a8dadc;
     border: none;
     box-shadow: 1rem 1rem 2rem lightgrey;
 }
+.error_input{
+    color: red;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
 .title{
     display: flex;
     justify-content: space-around;
@@ -74,20 +80,13 @@ span{
     cursor: pointer;
     box-shadow: 0.5rem 0.5rem 0.5rem lightgrey;
 }
-.container{
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-}
 table{
-    /* border: 2px solid black; */
     width: 100%;
     margin: auto;
     text-align: center;
     font-size: 1.2rem;
 }
 table td, table th{
-    /* border: 2px solid black; */
     border: 1px solid #ddd;
     padding: 8px;
     text-align: center;

@@ -59,7 +59,7 @@ function createUser(e) {
     pan: panNo.value,
     age: age.value,
     qual: highestQualification.value,
-    id: count++
+    id: count++,
   };
   //create an object to push into an array and local storage
   arr.push(data);
