@@ -12,6 +12,7 @@ const submitBtn = document.querySelector('.submit_btn');
 const inputForm = document.querySelector('.candidate_data');
 const errorInput = document.querySelector(".error_input");
 const searchAndSort = document.querySelector(".search_and_sort");
+const closeIcon = document.querySelector(".fa-xmark");
 const tableBody = document.querySelector('#table_body');
 //=================================================================function===========================================================================
 
@@ -118,6 +119,25 @@ localStorage.setItem("arr",JSON.stringify(arr));
 
 inputForm.reset();
 }
+//=======================================================================sort function===================================================================
+function filterData(event){
+tableBody.innerHTML= "";
+let temp;
+if(event.target.value == "normal")
+temp = arr.sort((a,b)=>a.id - b.id);
+else if(event.target.value == "A-Z")
+temp = arr.sort((a,b)=>a.name > b.name ? 1 : -1);
+else if(event.target.value == "Z-A")
+temp = arr.sort((a,b)=>a.name > b.name ? -1 : 1);
+temp.forEach(ele => {
+  addHtmlElement(ele);
+})
+}
+//========================================================================search function================================================================
+function searchData(event){
+tableBody.innerHTML = "";
+
+}
 //========================================================================event listeners=================================================================
 //form submit event listner
 submitBtn.addEventListener("click", createHtml);
@@ -140,4 +160,12 @@ tableBody.addEventListener("click",(event)=>{
 
 //for sorting data according to user choice
 
-  
+searchAndSort.addEventListener("click",(event)=>{
+  event.preventDefault();
+  if(event.target.classList.contains("sort_array")){
+    filterData(event);
+  }
+  else if(event.target.classList.contains("search")){
+    search.addEventListener("input", searchData);
+  }
+})
