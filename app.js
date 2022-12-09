@@ -136,7 +136,18 @@ temp.forEach(ele => {
 //========================================================================search function================================================================
 function searchData(event){
 tableBody.innerHTML = "";
-
+ let input = arr.filter((ele)=>{
+  if(ele.pan.includes(search.value))
+  return ele
+ })
+ if (input.length !== 0)
+ {
+  input.map((ele)=>{
+    addHtmlElement(ele);
+  })
+ }
+ else
+ tableBody.innerHTML=`<div class="search error">PAN NUMBER NOT FOUND</div`
 }
 //========================================================================event listeners=================================================================
 //form submit event listner
