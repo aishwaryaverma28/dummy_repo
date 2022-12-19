@@ -31,7 +31,7 @@ function addHtmlElement(inputObj)
   tableRow.innerHTML = `
     <td>${inputObj.name}</td>
     <td class="pan">${inputObj.pan}</td>
-    <td>${inputObj.age}</td>
+    <td>${inputObj.canAge}</td>
     <td>${inputObj.edu}</td>
     <td>
       <button class="del-btn btn">Delete</button>
@@ -87,7 +87,7 @@ function editRow(event){
   name = event.path[2].childNodes[1];
   pan = event.path[2].childNodes[3];
   canAge = event.path[2].childNodes[5];
-  education = event.path[2].childNodes[7];
+  education = event.path[ 2].childNodes[7];
   inpName.value = name.textContent;
   panNo.value = pan.textContent;
   age.vale = canAge.textContent;
@@ -104,7 +104,6 @@ function  saveUpdate(event,nameTxt, panTxt, ageTxt, eduTxt)
   canAge.textContent = ageTxt;
   education.textContent = eduTxt;
   submitBtn.value = "Add";
-
 // update the array
 arr.forEach((ele,index)=>{
   if(event.path[2].id==ele.id){
@@ -169,7 +168,7 @@ tableBody.addEventListener("click",(event)=>{
 
 
 
-//for sorting data according to user choice
+//for search and sort data according to user choice
 
 searchAndSort.addEventListener("click",(event)=>{
   event.preventDefault();
@@ -179,4 +178,4 @@ searchAndSort.addEventListener("click",(event)=>{
   else if(event.target.classList.contains("search")){
     search.addEventListener("input", searchData);
   }
-})
+})  
